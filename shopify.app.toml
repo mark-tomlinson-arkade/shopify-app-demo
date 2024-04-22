@@ -3,7 +3,7 @@
 client_id = "c5253e9cab01a726dc5ae82054a4532f"
 name = "beneficial-merchandise-app"
 handle = "beneficial-merchandise-app-5"
-application_url = "https://beneficial-merchandise-app.fly.dev"
+application_url = "https://beneficial-merchandise-app.fly.dev/app"
 embedded = true
 
 [build]
@@ -17,7 +17,7 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://beneficial-merchandise-app.fly.dev/auth/callback",
+  "https://beneficial-merchandise-app.fly.dev/app/auth/callback",
 ]
 
 [webhooks]
