@@ -1,0 +1,30 @@
+# fly.toml app configuration file generated for beneficial-merchandise-app on 2024-04-22T21:12:10+10:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'beneficial-merchandise-app'
+primary_region = 'syd'
+
+[build]
+
+[env]
+  PORT = "8081"
+  SHOPIFY_APP_URL = "https://beneficial-merchandise-app.fly.dev"
+  SHOPIFY_API_KEY = "c5253e9cab01a726dc5ae82054a4532f"
+  SCOPES = "write_products"
+
+
+
+[http_service]
+  internal_port = 8081
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
