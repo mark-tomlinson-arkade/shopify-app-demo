@@ -14,12 +14,13 @@ export const loader = async ({ request }) => {
     );
     throw redirect(`/app?${url.searchParams.toString()}`);
   }
-
+  console.log("Returning from index loader");
   return json({ showForm: Boolean(login) });
 };
 
 export default function App() {
   const { showForm } = useLoaderData();
+  console.log("🚀 ~ App ~ showForm:", showForm);
 
   return (
     <div className={styles.index}>
