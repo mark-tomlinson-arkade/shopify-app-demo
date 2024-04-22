@@ -16,14 +16,6 @@ import {
 import { authenticate } from "../shopify.server";
 
 export const loader = async ({ request }) => {
-  console.log("Loader for '/app'");
-  console.log("SHOPIFY_APP_URL:", process.env.SHOPIFY_APP_URL);
-  console.log("PORT:", process.env.PORT);
-  console.log("SHOPIFY_API_KEY:", process.env.SHOPIFY_API_KEY);
-  console.log("SHOPIFY_API_SECRET:", process.env.SHOPIFY_API_SECRET);
-  console.log("SCOPES:", process.env.SCOPES);
-  console.log("SHOP_CUSTOM_DOMAIN:", process.env.SHOP_CUSTOM_DOMAIN);
-
   await authenticate.admin(request);
 
   return null;

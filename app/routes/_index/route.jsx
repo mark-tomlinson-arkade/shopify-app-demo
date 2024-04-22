@@ -5,13 +5,6 @@ import styles from "./styles.module.css";
 
 export const loader = async ({ request }) => {
   const url = new URL(request.url);
-  console.log("Loader at '/': Current URL", url.href);
-  console.log("SHOPIFY_APP_URL:", process.env.SHOPIFY_APP_URL);
-  console.log("PORT:", process.env.PORT);
-  console.log("SHOPIFY_API_KEY:", process.env.SHOPIFY_API_KEY);
-  console.log("SHOPIFY_API_SECRET:", process.env.SHOPIFY_API_SECRET);
-  console.log("SCOPES:", process.env.SCOPES);
-  console.log("SHOP_CUSTOM_DOMAIN:", process.env.SHOP_CUSTOM_DOMAIN);
 
   if (url.searchParams.get("shop")) {
     console.log(
