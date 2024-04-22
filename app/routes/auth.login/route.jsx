@@ -19,6 +19,7 @@ export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 
 export const loader = async ({ request }) => {
   const errors = loginErrorMessage(await login(request));
+  console.log("🚀 ~ loader ~ errors:", errors)
 
   return json({ errors, polarisTranslations });
 };
@@ -33,6 +34,7 @@ export const action = async ({ request }) => {
 
 export default function Auth() {
   const loaderData = useLoaderData();
+  console.log("🚀 ~ Auth ~ loaderData:", loaderData)
   const actionData = useActionData();
   const [shop, setShop] = useState("");
   console.log("🚀 ~ Auth ~ shop:", shop)

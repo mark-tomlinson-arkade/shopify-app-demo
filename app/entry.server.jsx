@@ -17,8 +17,8 @@ export default async function handleRequest(
   const userAgent = request.headers.get("user-agent");
   const callbackName = isbot(userAgent ?? "") ? "onAllReady" : "onShellReady";
   
-  console.log("🚀 ~ remixContext:", remixContext)
-  console.log('Entry.server.jsx')
+  // console.log("🚀 ~ remixContext:", remixContext)
+  // console.log('Entry.server.jsx')
   return new Promise((resolve, reject) => {
     const { pipe, abort } = renderToPipeableStream(
       <RemixServer
