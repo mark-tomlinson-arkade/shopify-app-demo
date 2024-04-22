@@ -8,6 +8,7 @@ import { authenticate } from "../shopify.server";
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 
 export const loader = async ({ request }) => {
+  console.log("Entering App loader");
   await authenticate.admin(request);
 
   return json({ apiKey: process.env.SHOPIFY_API_KEY || "" });
@@ -15,7 +16,7 @@ export const loader = async ({ request }) => {
 
 export default function App() {
   const { apiKey } = useLoaderData();
-
+  console.log("App Component: API Key Loaded", apiKey);
   return (
     <AppProvider isEmbeddedApp apiKey={apiKey}>
       <ui-nav-menu>

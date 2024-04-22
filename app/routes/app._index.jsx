@@ -16,6 +16,7 @@ import {
 import { authenticate } from "../shopify.server";
 
 export const loader = async ({ request }) => {
+  console.log("Loader for '/app'");
   await authenticate.admin(request);
 
   return null;
@@ -89,6 +90,7 @@ export const action = async ({ request }) => {
 };
 
 export default function Index() {
+  console.log("Rendering Index page");
   const nav = useNavigation();
   const actionData = useActionData();
   const submit = useSubmit();
